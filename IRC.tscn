@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://arial.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://DarkRed.png" type="Texture" id=2]
+[ext_resource path="res://BrightRed.png" type="Texture" id=3]
+[ext_resource path="res://IRC.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="IRC" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 605.0
+color = Color( 0.0784314, 0.654902, 0.329412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEnter" type="LineEdit" parent="."]
+margin_left = 351.46
+margin_top = 494.46
+margin_right = 632.46
+margin_bottom = 547.46
+custom_fonts/font = SubResource( 1 )
+text = "Enter here"
+expand_to_text_length = true
+
+[node name="SendButton" type="TextureButton" parent="."]
+margin_left = 657.46
+margin_top = 491.622
+margin_right = 761.46
+margin_bottom = 558.622
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBackground" type="ColorRect" parent="."]
+margin_left = 282.758
+margin_top = 22.2705
+margin_right = 787.758
+margin_bottom = 461.27
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextDisplay" type="Label" parent="TextBackground"]
+margin_left = 12.3237
+margin_top = 12.1079
+margin_right = 565.324
+margin_bottom = 440.108
+text = "Welcome to IRC!
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Pos" type="Position2D" parent="."]
+position = Vector2( 141.516, 265.193 )
+
+[node name="Player2Pos" type="Position2D" parent="."]
+position = Vector2( 902.608, 287.788 )
+[connection signal="pressed" from="SendButton" to="." method="_on_SendButton_pressed"]
