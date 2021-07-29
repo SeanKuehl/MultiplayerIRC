@@ -40,9 +40,11 @@ func _on_SendButton_pressed():
 	
 	#this works!
 	if get_tree().is_network_server():
-		userName = "Sean"
-	else:
+		#Riley will be doing the port forwarding, thus will be hosting so it's his computer
+		#that will be the host
 		userName = "Riley"
+	else:
+		userName = "Sean"
 	
 	textToSend = $TextEnter.text
 	$TextBackground/TextDisplay.text += userName+": "+textToSend+"\n"

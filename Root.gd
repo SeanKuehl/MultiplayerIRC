@@ -18,7 +18,7 @@ func _on_Join_Server_pressed():
 	#IP 127... uses the current device(localhost). I would have to replace this with the port I forward.
 	#for Riley to be able to connect, otherwise it would try to connect to an open server on his computer which would not exist
 	#this is still useful for testing
-	net.create_client("10.0.0.61", 6969)	#this is the IP of my linux PC
+	net.create_client("", 6969)	#I'll need to put the IP that Riley forwards here, 
 	get_tree().set_network_peer(net)
 
 
